@@ -1,0 +1,3 @@
+# SpotWise
+Your parking assistance
+Searching for available parking spaces is often tedious, stressful and contributes to traffic jams. Additionally, locating your vehicle in a sprawling parking lot can present a considerable challenge. The objective of this project is to develop “SpotWise”, a system designed to assist drivers with parking, with a specific focus on shopping centers. SpotWise leverages computer vision and IoT technologies to solve these persistent problems. Through the implementation of advanced parking spot detection and monitoring, efficient path finding, as well as a mobile app, SpotWise simplifies the parking experience, reducing driver stress and optimizing the use of available parking spaces.
