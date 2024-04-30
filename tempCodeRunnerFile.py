@@ -1,1 +1,1 @@
-json_file_path = "spot_status.json"
+car

@@ -3,52 +3,52 @@
   "parking_space": [
     {
       "spot_id": "01",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "02",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-30T17:09:47.863303",
       "status": "empty"
     },
     {
       "spot_id": "03",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "04",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "occupied"
     },
     {
       "spot_id": "05",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "06",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "07",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "08",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "09",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     },
     {
       "spot_id": "10",
-      "timestamp": "2024-04-24T00:25:33.644592",
+      "timestamp": "2024-04-27T11:06:28.957262",
       "status": "empty"
     }
   ]
