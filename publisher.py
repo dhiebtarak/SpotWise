@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 import json
 import time
+import os
 
 # Define MQTT settings
 broker_address = "127.0.0.1"  # MQTT broker address
@@ -18,11 +19,15 @@ def on_message(client, userdata, msg):
 def on_publish(client, userdata, mid):
     print("Message published")
 
+def is_file_empty(file_path):
+    return os.stat(file_path).st_size == 2
+
 # Function to publish changes from JSON file
 def publish_changes(client):
-    with open("spot_changes.json", 'r') as changes_file:
-        changes_data = changes_file.read()
-    client.publish(topic, json.dumps(changes_data))
+    if not is_file_empty("spot_changes.json"):
+        with open("spot_changes.json", 'r') as changes_file:
+            changes_data = changes_file.read()
+        client.publish(topic, json.dumps(changes_data))
 
 # Create MQTT client
 client = mqtt.Client()
@@ -32,12 +37,17 @@ client.on_message = on_message
 
 # Connect to MQTT broker
 client.connect(broker_address, port, 60)
-
+try:
 # Main loop to continuously monitor changes and publish data
-while True:
-    # Check for changes in the JSON file and publish if there are any
-    
-    publish_changes(client)
-    
-    # Sleep for a short duration before checking again (adjust as needed)
-    time.sleep(5)
+    while True:
+        # Check for changes in the JSON file and publish if there are any
+        
+        publish_changes(client)
+        
+        # Sleep for a short duration before checking again (adjust as needed)
+        time.sleep(5)
+except KeyboardInterrupt:
+    # Handle keyboard interrupt (Ctrl+C) to gracefully terminate the script
+    print("Script terminated by user")
+    client.disconnect()
+    client.loop_stop()
