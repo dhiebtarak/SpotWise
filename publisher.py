@@ -2,12 +2,12 @@ import paho.mqtt.client as mqtt
 import json
 import time
 import os
-
+import requests 
 # Define MQTT settings
 broker_address = "127.0.0.1"  # MQTT broker address
 port = 1883
 topic = "spot_changes"  # MQTT topic for publishing changes
-
+url = "http://localhost:8000/data1"
 # MQTT callbacks
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
@@ -27,6 +27,7 @@ def publish_changes(client):
     if not is_file_empty("spot_changes.json"):
         with open("spot_changes.json", 'r') as changes_file:
             changes_data = changes_file.read()
+         
         client.publish(topic, json.dumps(changes_data))
 
 # Create MQTT client

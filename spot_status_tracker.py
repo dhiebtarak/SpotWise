@@ -19,13 +19,11 @@ class SpotStatusUpdater:
             if spot['spot_id'] in occupied_spots:
                 if spot['status'] != 'occupied':  # Check if status changed
                     spot['status'] = 'occupied'
-                    spot['timestamp'] = current_date
-                    changes.append({'spot_id': spot['spot_id'], 'status': 'occupied', 'timestamp': current_date})
+                    changes.append({'spot_id': spot['spot_id'], 'status': 'occupied'})
             else:
                 if spot['status'] != 'empty':  # Check if status changed
                     spot['status'] = 'empty'
-                    spot['timestamp'] = current_date
-                    changes.append({'spot_id': spot['spot_id'], 'status': 'empty', 'timestamp': current_date})
+                    changes.append({'spot_id': spot['spot_id'], 'status': 'empty'})
 
         # Write the updated data back to the original JSON file
         with open(self.json_file_path, 'w') as json_file:
