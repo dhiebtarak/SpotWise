@@ -1,5 +1,5 @@
 import cv2
-
+import time
 class SpotsDetector:
     def __init__(self, video_path):
         self.video_path = video_path
@@ -21,7 +21,7 @@ class SpotsDetector:
 
             frame = cv2.resize(frame, (1280, 640))
             cv2.imshow('frame', frame)
-
+            time.sleep(1)
             key = cv2.waitKey(1) & 0xFF
             if key == ord('q'):
                 break

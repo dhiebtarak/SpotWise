@@ -1,0 +1,56 @@
+{
+  "floor": "0",
+  "camera_id": "cam4",
+  "parking_space": [
+    {
+      "spot_id": "D01",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D02",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D03",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D04",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "occupied"
+    },
+    {
+      "spot_id": "D05",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D06",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D07",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D08",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D09",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    },
+    {
+      "spot_id": "D10",
+      "timestamp": "2024-05-08 02:32:04",
+      "status": "empty"
+    }
+  ]
+}

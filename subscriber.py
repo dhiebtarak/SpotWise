@@ -1,25 +1,40 @@
 import paho.mqtt.client as mqtt
 import json 
 import requests
+
+# Define URL for POST requests
 url = "http://localhost:8000/data1"
+
 # Define MQTT settings
 broker_address = "127.0.0.1"  # Public MQTT broker for testing purposes
 port = 1883
-topic = "spot_changes"
+topics = ["spot_changes1", "spot_changes2", "spot_changes3", 
+          "spot_changes4", "spot_changes5", "spot_changes6"]
 
-# MQTT callbacks
+# MQTT callback for message reception
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe(topic)
-
+    # Subscribe to all topics
+    for topic in topics:
+        client.subscribe(topic)
 
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload.decode()))
     try:
         # Parse the JSON message
         data = msg.payload.decode() 
-        data1 = json.loads(data)
-        response=requests.post(url,json=data)
+        data = json.loads(data)
+        data = data[1:-1]
+        data = json.loads(data) 
+        
+        # Extract topic from message
+        topic = msg.topic
+
+        # Send data to URL based on topic
+        response = requests.post(url, json=data)
+     
+        print("Data to be sent:", data)  # Debugging statement
+        print("Response:", response.status_code)  # Debugging statement
+        print("Response Content:", response.text)  # Debugging statement
     except Exception as e:
         print("Error:", e)
 
